@@ -1,0 +1,43 @@
+display:
+  mach: 3
+  unit:
+    name: "mph"
+    factor: 2.23694
+
+quarkus:
+  application:
+    name: api-model
+  datasource:
+    db-kind: h2
+    username: sa
+    password:
+    jdbc:
+      url: jdbc:h2:mem:test
+      driver: org.h2.Driver
+      max-size: 20
+  hibernate-orm:
+    database:
+      generation: drop-and-create #none
+  http:
+    host: 0.0.0.0
+  # log:
+  #   handler:
+  #     gelf:
+  #       enabled: true
+  #       host: tcp:127.0.0.1
+  #       port: 12201
+  #       additional-field:
+  #         app_name: 
+  #           value: ${quarkus.application.name}
+  #           type: String
+  #         app_port: 
+  #           value: ${quarkus.http.port}
+  #           type: String
+        
+  # vault:
+  #     authentication:
+  #       userpass:
+  #         password: ***
+  #         username: dev
+  #     secret-config-kv-path: developer/info/config
+  #     url: http://localhost:8200
